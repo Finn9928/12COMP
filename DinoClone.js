@@ -18,20 +18,16 @@ function setup() {
     blueCube.color = 'blue';
     ground = new Sprite(SCREEN_WIDTH/2, SCREEN_HEIGHT, SCREEN_WIDTH, 4, 's');
     ground.color = 'black';
-    world.gravity.y = 24.79;
-    //document.addEventListener("keydown", function(event) {
+    world.gravity.y = 80;
+    document.addEventListener("keydown", 
+        function(event) {
+            console.log("Key pressed!"+blueCube.y);
 
-  //if (event.code === 'ArrowLeft') {
-
-    // Set sprite's velocity to the left
-
- // }
-
- // else {
-
-//     etc...    
-//
-//});
+            if(blueCube.y > 369 ){// 184 - found from testing - floor level
+                console.log("Key pressed!"+blueCube.y);
+                blueCube.vel.y = -20;
+            }
+    });
 }
 
 /*******************************************************/
